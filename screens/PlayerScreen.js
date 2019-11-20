@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TouchableOpacity, View, StyleSheet, Button } from 'react-native';
+import { TouchableOpacity, View, StyleSheet } from 'react-native';
 import Slider from 'react-native-slider';
 
 import HomeButton from '../components/HomeButton';

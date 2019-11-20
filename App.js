@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+//import { StyleSheet, View } from 'react-native';
 import { AppLoading } from 'expo';
 import * as Font from 'expo-font';
 
@@ -12,7 +12,6 @@ const fetchFonts = () => {
 		 'font-bold': require('./assets/fonts/OpenSans-Bold.ttf')
 	});
 };
-
 
 export default function App() {
 
@@ -34,12 +33,7 @@ export default function App() {
 	closeLoadingHandler = () => {
 		setLoadingScreen(false);
 	};
-
-	selectKeyHandler = (key) => {
-		setCurrentKey(key);
-		console.log('Selected Key: %s', key.toSting());
-	};
-
+	
 	if (loadingScreen) {
 		return (
 			<LoadingScreen closeLoading={this.closeLoadingHandler}/>
@@ -48,6 +42,3 @@ export default function App() {
 
 	return <EmptyCup_Navigator />;
 }
-
-const styles = StyleSheet.create({
-});

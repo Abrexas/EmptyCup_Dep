@@ -1,13 +1,14 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 import HomeButton from '../components/HomeButton';
+import TextRegular from '../components/TextRegular';
 
 const EducationScreen = props => {
 	return (
 		<View style={styles.screen}>
 			<HomeButton style={{width: 150, height: 150}} onPress={() => {props.navigation.navigate({routeName: 'Home'})}}/>
-			<Text>Education</Text>
+			<TextRegular>Education</TextRegular>
 		</View>
 	);
 };

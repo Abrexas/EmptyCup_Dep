@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, StyleSheet, Image } from 'react-native';
+import {View, StyleSheet } from 'react-native';
 
 import HomeButton from '../components/HomeButton';
 import TextRegular from '../components/TextRegular';
@@ -17,9 +17,6 @@ const styles = StyleSheet.create({
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center'
-	},
-	logo: {
-		marginTop: 10
 	}
 });
 

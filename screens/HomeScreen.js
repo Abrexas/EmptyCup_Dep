@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Image, Text, View, StyleSheet } from 'react-native';
+import { Button, View, StyleSheet } from 'react-native';
 
 import HomeButton from '../components/HomeButton';
 import FuncButton from '../components/FuncButton';

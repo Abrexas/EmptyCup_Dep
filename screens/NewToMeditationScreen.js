@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions, TouchableOpacity, View, Button, StyleSheet, ScrollView} from 'react-native';
+import { Dimensions, TouchableOpacity, View, StyleSheet, ScrollView} from 'react-native';
 
 import HomeButton from '../components/HomeButton';
 import TextBold from '../components/TextBold';
