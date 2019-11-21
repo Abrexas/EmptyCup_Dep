@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, View, StyleSheet } from 'react-native';
+import { Dimensions, ScrollView, View, StyleSheet } from 'react-native';
 
 import HomeButton from '../components/HomeButton';
 import FuncButton from '../components/FuncButton';
@@ -37,10 +37,9 @@ const MeditationKeysScreen = props => {
 	);
 };
 
+
 const styles = StyleSheet.create({
 	screen: {
-		flex: 1,
-		paddingBottom: 10
 	},
 	buttonContainer: {
 		marginTop: 20,
@@ -48,7 +47,7 @@ const styles = StyleSheet.create({
 	},
 	keyContainer: {
 		padding: 20,
-		justifyContent: 'space-between'
+		paddingTop: 100
 	}
 });
 

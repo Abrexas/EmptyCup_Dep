@@ -8,8 +8,12 @@ import BinauralBeats from '../components/environments/BinauralBeats';
 const BinauralBeatsScreen = props => {
 	return (
 		<View style={styles.screen}>
-			<HomeButton style={{width: 150, height: 150}} onPress={() => {props.navigation.navigate({routeName: 'Home'})}}/>
-			<BinauralBeats navigation={ props.navigation } />
+			<View>
+				<HomeButton style={{width: 150, height: 150}} onPress={() => {props.navigation.navigate({routeName: 'Home'})}}/>
+			</View>
+			<View style={styles.beatsContainer}>
+				<BinauralBeats navigation={ props.navigation } />
+			</View>
 		</View>
 	);
 };
@@ -17,8 +21,10 @@ const BinauralBeatsScreen = props => {
 const styles = StyleSheet.create({
 	screen: {
 		flex: 1,
-		justifyContent: 'center',
 		alignItems: 'center'
+	},
+	beatsContainer: {
+		paddingTop: 100
 	}
 });
 

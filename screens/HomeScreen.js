@@ -29,6 +29,9 @@ const HomeScreen = props => {
 				<FuncButton title="EDUCATION" onPress={() => {
 					props.navigation.navigate({routeName: 'Education'});}} 
 				/>
+				<FuncButton title="SETTINGS" onPress={() => {
+					props.navigation.navigate({routeName: 'Settings'});}} 
+				/>
 			</View>
 		</View>
 	);
