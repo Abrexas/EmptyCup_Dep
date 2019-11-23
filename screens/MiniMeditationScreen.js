@@ -6,8 +6,6 @@ import FuncButton from '../components/FuncButton';
 import TextBold from '../components/TextBold';
 import TextRegular from '../components/TextRegular';
 
-import MiniKey from '../components/environments/MiniKey';
-
 const MiniMeditations = props => {
 	return (
 		<ScrollView>
@@ -16,8 +14,10 @@ const MiniMeditations = props => {
 					<HomeButton style={{width: 150, height: 150}} onPress={() => {props.navigation.navigate({routeName: 'Home'})}}/>
 				</View>
 				<View style={styles.infoContainer}>
+					{/* --- Update: Gather from dummy-data
 					<MiniKey navigation={props.navigation}/>
-					
+					*/}
+
 					<TextBold style={styles.titleFont}>WHAT IS A MINI MEDITATIONS</TextBold>
 					<View style={styles.videoContainer}>
 						<TextRegular style={{ textAlign: 'center', fontSize: 12 }}>VIDEO ABOUT MINI MEDITATION</TextRegular>

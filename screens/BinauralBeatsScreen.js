@@ -3,8 +3,6 @@ import { View, StyleSheet } from 'react-native';
 
 import HomeButton from '../components/HomeButton';
 
-import BinauralBeats from '../components/environments/BinauralBeats';
-
 const BinauralBeatsScreen = props => {
 	return (
 		<View style={styles.screen}>
@@ -12,7 +10,9 @@ const BinauralBeatsScreen = props => {
 				<HomeButton style={{width: 150, height: 150}} onPress={() => {props.navigation.navigate({routeName: 'Home'})}}/>
 			</View>
 			<View style={styles.beatsContainer}>
+				{/* Update: Get from dummy-data
 				<BinauralBeats navigation={ props.navigation } />
+				*/}
 			</View>
 		</View>
 	);

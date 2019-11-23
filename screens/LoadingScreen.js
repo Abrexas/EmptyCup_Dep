@@ -5,6 +5,8 @@ import Colors from '../constants/Colors';
 import HomeButton from '../components/HomeButton';
 import TextRegular from '../components/TextRegular';
 
+import { KEY_MEDITATION, KEYZ_MEDITATION } from '../data/dummy-data';
+
 const LoadingScreen = props => {
 	return(
 		<View style={styles.container}>

@@ -6,11 +6,42 @@ import FuncButton from '../components/FuncButton';
 import TextBold from '../components/TextBold';
 import TextRegular from '../components/TextRegular';
 
-import FirstKey from '../components/environments/FirstKey';
-import SecondKey from '../components/environments/SecondKey';
-import ThirdKey from '../components/environments/ThirdKey';
-import MeditationKey from '../components/environments/MeditationKey';
-import ReleaseKey from '../components/environments/ReleaseKey';
+import { KEY_MEDITATION } from '../data/dummy-data';
+
+const renderKeys = (props) => {
+	let keyID = props.navigation.getParam('id', 'N/A');
+	let keys = [];
+
+	for ( let i = 0; i < keyID.length; i++ ) {
+		keys.push(
+			<View key={KEY_MEDITATION[keyID[i]].id}>
+				<TextBold 
+					style={styles.titleFont}
+				>
+					{ KEY_MEDITATION[keyID[i]].title }
+				</TextBold>
+				{ renderMeditations(props, keyID[i]) }
+			</View>
+		);
+	}
+	return ( keys );
+}
+
+const renderMeditations = (props, id) => {
+	let funcButtons = [];
+	for ( let i = 0; i < KEY_MEDITATION[id].medArray.length; i++ ){
+		funcButtons.push(
+			<FuncButton 
+				key={ KEY_MEDITATION[id].id + KEY_MEDITATION[id].medArray[i].id }
+				title={ KEY_MEDITATION[id].medArray[i].title } 
+				onPress={() => {
+					props.navigation.navigate('Player', { title: KEY_MEDITATION[id].medArray[i].title })
+				}} 
+			/>	
+		);
+	}
+	return ( funcButtons )
+}
 
 const FirstKeyScreen = props => {
 	
@@ -22,14 +53,8 @@ const FirstKeyScreen = props => {
 						props.navigation.navigate({routeName: 'Home'})}}
 					/>
 				</View>
-				<View>
-					{/* SWITCH STATEMENT */}
-						{/*   ...   */}
-					<FirstKey navigation={props.navigation}/>
-					<SecondKey navigation={props.navigation}/>
-					<ThirdKey navigation={props.navigation}/>
-					<MeditationKey navigation={props.navigation}/>
-					<ReleaseKey navigation={props.navigation}/>
+				<View style={{ paddingTop: 50 }}>
+					{renderKeys(props)}	
 				</View>
 			</View>
 		</ScrollView>

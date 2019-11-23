@@ -14,8 +14,14 @@ const HomeScreen = props => {
 				<FuncButton title="I AM NEW TO MEDITATION" onPress={() => {
 					props.navigation.navigate({routeName: 'NewToMedi'});}} 
 				/>
-				<FuncButton title="MEDITATION KEYS" onPress={() => {
-					props.navigation.navigate({routeName: 'Meditations'});}} 
+				<FuncButton
+					title="MEDITATION KEYS" 
+					onPress={() => {
+						props.navigation.navigate(
+							'Meditations',
+							{ id: [0, 1, 2] }
+						)
+					}} 
 				/>
 				<FuncButton title="MINI MEDITATIONS" onPress={() => { 
 					props.navigation.navigate({routeName: 'MiniMedi'});}} 

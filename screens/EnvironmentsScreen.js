@@ -15,21 +15,52 @@ const MeditationKeysScreen = props => {
 						props.navigation.navigate({routeName: 'Home'})}}
 					/>
 				</View>
+
 				<View style={styles.keyContainer}>
-					<FuncButton title="FIRST KEY ENVIRONMENT" onPress={() => {
-						props.navigation.navigate({routeName: 'Meditations'});}} 
+					<FuncButton
+						title="FIRST KEY ENVIRONMENT" 
+						onPress={() => {
+							props.navigation.navigate(
+								'Meditations',
+								{ id: [0] }
+							)
+						}} 
 					/>
-					<FuncButton title="SECOND KEY ENVIRONMENT" onPress={() => {
-						props.navigation.navigate({routeName: 'Meditations'});}} 
+					<FuncButton
+						title="SECOND KEY ENVIRONMENT" 
+						onPress={() => {
+							props.navigation.navigate(
+								'Meditations',
+								{ id: [1] }
+							)
+						}} 
 					/>
-					<FuncButton title="THIRD KEY ENVIRONMENT" onPress={() => {
-						props.navigation.navigate({routeName: 'Meditations'});}} 
+					<FuncButton
+						title="THIRD KEY ENVIRONMENT" 
+						onPress={() => {
+							props.navigation.navigate(
+								'Meditations',
+								{ id: [2] }
+							)
+						}} 
 					/>
-					<FuncButton title="MINI MEDI ENVIRONMENT" onPress={() => {
-						props.navigation.navigate({routeName: 'Meditations'});}} 
+					<FuncButton
+						title="MINE MEDITATION ENVIRONMENT" 
+						onPress={() => {
+							props.navigation.navigate(
+								'Meditations',
+								{ id: [3] }
+							)
+						}} 
 					/>
-					<FuncButton title="RELEASE ENVIRONMENT" onPress={() => {
-						props.navigation.navigate({routeName: 'Meditations'});}} 
+					<FuncButton
+						title="RELEASE ENVIRONMENT" 
+						onPress={() => {
+							props.navigation.navigate(
+								'Meditations',
+								{ id: [4] }
+							)
+						}} 
 					/>
 				</View>
 			</View>
