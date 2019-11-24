@@ -46,5 +46,15 @@ export const KEY_MEDITATION = [
 		new Meditation('M5', 'MEDITATION NAME', 'URL_Link'),
 		new Meditation('M6', 'MEDITATION NAME', 'URL_Link'),
 		new Meditation('M7', 'MEDITATION NAME', 'URL_Link'),
+	]),
+	new Key('K6', 'MINI MEDITATIONS', [
+		new Meditation('M1', 'THE FLOATING ISLAND', 'URL_Link'),
+		new Meditation('M2', 'THREE RINGS', 'URL_LINK'),
+		new Meditation('M3', 'OTHER MIN', 'URL_Link')
+	]),
+	new Key('K7', 'BINAURAL BEATS', [
+		new Meditation('M1', 'TRACK 01', 'URL'),
+		new Meditation('M2', 'TRACK 02', 'URL'),
+		new Meditation('M3', 'TRACK 03', 'URL')
 	])
 ];

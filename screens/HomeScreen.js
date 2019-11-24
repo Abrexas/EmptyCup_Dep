@@ -29,8 +29,14 @@ const HomeScreen = props => {
 				<FuncButton title="MEDITATION ENVIRONMENTS" onPress={() => {
 					props.navigation.navigate({routeName: 'Environments'});}} 
 				/>
-				<FuncButton title="BINAURAL BEATS" onPress={() => {
-					props.navigation.navigate({routeName: 'BinBeats'});}} 
+				<FuncButton
+					title="BINAURAL BEATS" 
+					onPress={() => {
+						props.navigation.navigate(
+							'Meditations',
+							{ id: [6] }
+						)
+					}} 
 				/>
 				<FuncButton title="EDUCATION" onPress={() => {
 					props.navigation.navigate({routeName: 'Education'});}} 
