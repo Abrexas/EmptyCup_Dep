@@ -5,7 +5,7 @@ import HomeButton from '../components/HomeButton';
 import OtherButton from '../components/OtherButton';
 import TextBold from '../components/TextBold';
 
-const Settings= props => {
+const Admin = props => {
 
 	return (
 		<ScrollView>
@@ -17,8 +17,7 @@ const Settings= props => {
 				</View>
 				<View style={styles.settingsContainer}>
 					<OtherButton 
-						style={{ width: '80%' }}
-						title={"Dark Mode (on/off)"} 
+						title={"Upload"} 
 						onPress={ () => { console.log('Click')  }}
 					/>
 				</View>
@@ -38,9 +37,7 @@ const styles = StyleSheet.create({
 	},
 	settingsContainer: {
 		paddingTop: 80,
-		alignItems: 'center',
-		justifyContent: 'space-between'
 	}
 });
 
-export default Settings;
+export default Admin;

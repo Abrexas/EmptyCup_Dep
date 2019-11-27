@@ -44,6 +44,9 @@ const HomeScreen = props => {
 				<FuncButton title="SETTINGS" onPress={() => {
 					props.navigation.navigate({routeName: 'Settings'});}} 
 				/>
+				<FuncButton title="UPLOAD (ADMIN)" onPress={() => {
+					props.navigation.navigate({routeName: 'Admin'});}} 
+				/>
 			</View>
 		</View>
 	);

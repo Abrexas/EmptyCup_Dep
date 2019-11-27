@@ -9,6 +9,7 @@ import BinauralBeatsScreen from '../screens/BinauralBeatsScreen';
 import EducationScreen from '../screens/EducationScreen';
 import KeyScreen from '../screens/KeyScreen';
 import PlayerScreen from '../screens/PlayerScreen';
+import AdminScreen  from '../screens/AdminScreen';
 
 import SettingsScreen from '../screens/SettingsScreen';
 
@@ -21,7 +22,8 @@ EmptyCup_Navigator = createStackNavigator({
 	Education: EducationScreen,
 	Meditations: KeyScreen,
 	Player: PlayerScreen,
-	Settings: SettingsScreen
+	Settings: SettingsScreen,
+	Admin: AdminScreen
 });
 
 export default createAppContainer(EmptyCup_Navigator);

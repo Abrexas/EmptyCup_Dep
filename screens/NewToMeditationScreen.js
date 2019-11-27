@@ -2,6 +2,7 @@ import React from 'react';
 import { Dimensions, TouchableOpacity, View, StyleSheet, ScrollView} from 'react-native';
 
 import HomeButton from '../components/HomeButton';
+import OtherButton from '../components/OtherButton';
 import TextBold from '../components/TextBold';
 import TextRegular from '../components/TextRegular';
 
@@ -22,11 +23,10 @@ const NewToMeditation = props => {
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 						</TextRegular>
 					</View>
-					<TouchableOpacity activeOpacity={0.6} onPress={() => {props.navigation.navigate('Player', { title: "TBD" })}}>
-						<View style={styles.bottomButton}>
-							<TextRegular style={{ textAlign: 'center' }}>GET STARTED</TextRegular>
-						</View>
-					</TouchableOpacity>
+					<OtherButton
+						title="  GET STARTED  "
+						onPress={() => {props.navigation.navigate('Player', { title: "TBD" })}}>
+					</OtherButton>
 				</View>
 			</View>
 		</ScrollView>
@@ -64,12 +64,6 @@ const styles = StyleSheet.create({
 	},
 	descriptionContainer: {
 		width: _width * 0.8,
-	},
-	bottomButton: {
-		width: _width * 0.8,
-		height: 40,
-		borderWidth: 2,
-		justifyContent: 'center'
 	}
 });
 
