@@ -1,12 +1,17 @@
 import React from 'react';
-import { ScrollView, View, StyleSheet } from 'react-native';
+import { Dimensions, ScrollView, View, StyleSheet } from 'react-native';
 
 import HomeButton from '../components/HomeButton';
 import FuncButton from '../components/FuncButton';
 import TextBold from '../components/TextBold';
 import TextRegular from '../components/TextRegular';
+import Colors from '../constants/Colors';
 
 import { KEY_MEDITATION } from '../data/dummy-data';
+
+// Redux Imports
+import { useSelector, useDispatch } from 'react-redux';
+import { toggle_DarkMode } from '../data/actions';
 
 const renderKeys = (props) => {
 	let keyID = props.navigation.getParam('id', 'N/A');
@@ -44,10 +49,13 @@ const renderMeditations = (props, id) => {
 }
 
 const FirstKeyScreen = props => {
+	// Initalize Redux Variables
+	const dispatch = useDispatch();
+	const darkMode = useSelector(state => state.darkMode);
 	
 	return (
 		<ScrollView>
-			<View style={styles.screen}>
+			<View style={darkMode ? styles_dm.screen : styles.screen}>
 				<View style={styles.buttonContainer}>
 					<HomeButton style={{width: 150, height: 150}} onPress={() => {
 						props.navigation.navigate({routeName: 'Home'})}}
@@ -61,9 +69,25 @@ const FirstKeyScreen = props => {
 	);
 };
 
+var width = Dimensions.get('window').width;
+var height = Dimensions.get('window').height;
+
+const styles_dm = StyleSheet.create({
+	screen: {
+		flex: 1,
+		backgroundColor: Colors.primary_dm,
+		width: width,
+		minHeight: height,
+		paddingBottom: 10
+	}
+});
+
 const styles = StyleSheet.create({
 	screen: {
 		flex: 1,
+		backgroundColor: Colors.primary,
+		width: width,
+		minHeight: height,
 		paddingBottom: 10
 	},
 	buttonContainer: {

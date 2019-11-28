@@ -17,10 +17,13 @@ export default () => {
 */
 
 export default {
-		primary: 'white',
-		accent: 'black',
-		text_primary: 'black',
-		text_secondary: 'grey',
+	primary: 'white',
+	accent: 'black',
+	border: 'black',
+	text_primary: 'black',
+	text_secondary: 'grey',
 
-		primary_dm: 'black'
+	primary_dm: 'black',
+	border_dm: 'grey',
+	text_primary_dm: 'darkgrey',
 };

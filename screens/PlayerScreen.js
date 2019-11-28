@@ -1,13 +1,22 @@
 import React, { useState } from 'react';
-import { TouchableOpacity, View, StyleSheet } from 'react-native';
+import { Dimensions, TouchableOpacity, View, StyleSheet } from 'react-native';
 import Slider from 'react-native-slider';
 
 import HomeButton from '../components/HomeButton';
 import MediaButton from '../components/MediaButton';
 import TextBold from '../components/TextBold';
 import TextRegular from '../components/TextRegular';
+import Colors from '../constants/Colors';
+
+// Redux Imports
+import { useSelector, useDispatch } from 'react-redux';
+import {toggle_DarkMode } from '../data/actions';
 
 const PlayerScreen = props => {
+
+	// Import Redux Variables
+	const dispatch = useDispatch();
+	const darkMode = useSelector(state => state.darkMode);
 
 	// Set Temporary State Variable
 	const [ isPlaying, setIsPlaying ] = useState(false);
@@ -26,7 +35,7 @@ const PlayerScreen = props => {
 	}
 
 	return (
-		<View style={styles.screen}>
+		<View style={darkMode ? styles_dm.screen : styles.screen}>
 			<View style={styles.buttonContainer}>
 				<HomeButton style={{width: 150, height: 150}} onPress={() => {props.navigation.navigate({routeName: 'Home'})}}/>
 			</View>
@@ -50,9 +59,26 @@ const PlayerScreen = props => {
 	);
 };
 
+var width = Dimensions.get('window').width;
+var height = Dimensions.get('window').height;
+
+const styles_dm = StyleSheet.create({
+	screen: {
+		flex: 1,
+		width: width,
+		minHeight: height,
+		backgroundColor: Colors.primary_dm,
+		paddingBottom: 10,
+		justifyContent: 'space-around'
+	}
+});
+
 const styles = StyleSheet.create({
 	screen: {
 		flex: 1,
+		width: width,
+		minHeight: height,
+		backgroundColor: Colors.primary,
 		paddingBottom: 10,
 		justifyContent: 'space-around'
 	},
