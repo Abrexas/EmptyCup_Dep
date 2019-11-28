@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
-//import { StyleSheet, View } from 'react-native';
 import { AppLoading } from 'expo';
 import * as Font from 'expo-font';
 
 import EmptyCup_Navigator from './navigation/EmptyCup_Navigator';
 import LoadingScreen from './screens/LoadingScreen';
+
+// Redux Imports
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from './data/reducers';
+
+const store = createStore(rootReducer);
 
 const fetchFonts = () => {
 	return Font.loadAsync({
@@ -36,9 +42,15 @@ export default function App() {
 	
 	if (loadingScreen) {
 		return (
-			<LoadingScreen closeLoading={this.closeLoadingHandler}/>
+			<Provider store={store}>
+				<LoadingScreen closeLoading={this.closeLoadingHandler}/>
+			</Provider>
 		);
 	}
 
-	return <EmptyCup_Navigator />;
+	return (
+		<Provider store={store}>
+			<EmptyCup_Navigator />
+		</Provider>
+	)
 }

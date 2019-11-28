@@ -1,3 +1,10 @@
 // Index for Reducers
 
-import { combineReducers } from 'react-redux';
+import { combineReducers } from 'redux';
+import DarkModeReducer from './DarkMode';
+
+const rootReducer = combineReducers({
+	darkMode: DarkModeReducer
+});
+
+export default rootReducer;

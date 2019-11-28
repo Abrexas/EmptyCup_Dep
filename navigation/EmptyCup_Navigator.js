@@ -13,17 +13,27 @@ import AdminScreen  from '../screens/AdminScreen';
 
 import SettingsScreen from '../screens/SettingsScreen';
 
-EmptyCup_Navigator = createStackNavigator({
-	Home: HomeScreen,
-	NewToMedi: NewToMeditationScreen,
-	MiniMedi: MiniMeditationScreen,
-	Environments: EnvironmentsScreen,
-	BinBeats: BinauralBeatsScreen,
-	Education: EducationScreen,
-	Meditations: KeyScreen,
-	Player: PlayerScreen,
-	Settings: SettingsScreen,
-	Admin: AdminScreen
-});
+EmptyCup_Navigator = createStackNavigator(
+	{
+		Home: HomeScreen,
+		NewToMedi: NewToMeditationScreen,
+		MiniMedi: MiniMeditationScreen,
+		Environments: EnvironmentsScreen,
+		BinBeats: BinauralBeatsScreen,
+		Education: EducationScreen,
+		Meditations: KeyScreen,
+		Player: PlayerScreen,
+		Settings: SettingsScreen,
+		Admin: AdminScreen
+	},
+	{
+		defaultNavigationOptions: {
+			headerStyle: {
+			},
+			headerTransparent: 'true',
+			headerTintColor: 'grey'
+		}
+	}
+);
 
 export default createAppContainer(EmptyCup_Navigator);

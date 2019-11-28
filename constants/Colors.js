@@ -1,7 +1,26 @@
+/*
+import { useSelector, useDispatch } from 'react-redux';
+import { toggle_DarkMode } from '../data/actions';
+
+export default () => {
+	const dispatch = useDispatch();
+	const darkMode = useSelector(state => state.toggle_DarkMode);
+
+	console.log("ddd")
+	return {
+		primary: 'white',
+		accent: 'black',
+		text_primary: 'black',
+		text_secondary: 'grey',
+	}
+}
+*/
+
 export default {
-	// Normal Color Scheme
-	primary: 'white',
-	accent: 'black',
-	text_primary: 'black',
-	text_secondary: 'grey',
+		primary: 'white',
+		accent: 'black',
+		text_primary: 'black',
+		text_secondary: 'grey',
+
+		primary_dm: 'black'
 };

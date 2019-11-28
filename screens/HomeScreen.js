@@ -1,12 +1,21 @@
 import React from 'react';
-import { Button, View, StyleSheet } from 'react-native';
+import { Dimensions, Button, View, StyleSheet } from 'react-native';
 
 import HomeButton from '../components/HomeButton';
 import FuncButton from '../components/FuncButton';
+import Colors from '../constants/Colors';
+
+// Redux Imports
+import { useSelector, useDispatch } from 'react-redux';
+import { toggle_DarkMode } from '../data/actions';
 
 const HomeScreen = props => {
+	// Initalize Redux Variables
+	const dispatch = useDispatch();
+	const darkMode = useSelector(state => state.darkMode);
+
 	return (
-		<View style={styles.screen}>
+		<View style={darkMode ? styles_dm.screen : styles.screen}>
 			<View style={styles.homeButtonContainer}>
 				<HomeButton onPress={() => console.log('Home')} />
 			</View>
@@ -52,9 +61,33 @@ const HomeScreen = props => {
 	);
 };
 
+var width = Dimensions.get('window').width;
+var height = Dimensions.get('window').height;
+
+const styles_dm = StyleSheet.create({
+	screen: {
+		flex: 1,
+		width: width,
+		height: height,
+		backgroundColor: Colors.primary_dm,
+		alignItems: 'center'
+	},
+	homeButtonContainer: {
+		marginTop: 20,
+		alignItems: 'center'
+	},
+	functionButtonContainer: {
+		marginTop: 80,
+		flex: 0.8,
+		justifyContent: 'space-between'
+	}
+});
 const styles = StyleSheet.create({
 	screen: {
 		flex: 1,
+		width: width,
+		height: height,
+		backgroundColor: Colors.primary,
 		alignItems: 'center'
 	},
 	homeButtonContainer: {
