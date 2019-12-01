@@ -7,17 +7,18 @@ import Colors from '../constants/Colors';
 
 // Redux Imports
 import { useSelector, useDispatch } from 'react-redux';
-import { toggle_DarkMode } from '../data/actions';
+import { UserData, toggle_DarkMode } from '../data/actions';
 
 const HomeScreen = props => {
 	// Initalize Redux Variables
 	const dispatch = useDispatch();
 	const darkMode = useSelector(state => state.darkMode);
+	const userData = useSelector(state => state.userData);
 
 	return (
 		<View style={darkMode ? styles_dm.screen : styles.screen}>
 			<View style={styles.homeButtonContainer}>
-				<HomeButton onPress={() => console.log('Home')} />
+				<HomeButton onPress={() => console.log(userData)} />
 			</View>
 			<View style={styles.functionButtonContainer}>
 				<FuncButton title="I AM NEW TO MEDITATION" onPress={() => {

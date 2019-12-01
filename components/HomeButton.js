@@ -38,7 +38,7 @@ const HomeButton = props => {
 
 	return (
 		<View style={{...styles.buttonContainer, ...props.style}}>
-			<TouchableOpacity activeOpacity={0.6} onPress={props.onPress}>
+			<TouchableOpacity activeOpacity={0.6} onPress={ props.onPress }>
 				<View style={styles.imageContainer}>
 					{EC_Button}
 				</View>

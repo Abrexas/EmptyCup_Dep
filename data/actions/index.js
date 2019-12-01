@@ -5,3 +5,9 @@ export const toggle_DarkMode = () => {
 		type: 'TOGGLE_DARKMODE'
 	}
 };
+
+export const UserData = () => {
+	return {
+		type: 'LOGIN_USER'
+	}
+};
